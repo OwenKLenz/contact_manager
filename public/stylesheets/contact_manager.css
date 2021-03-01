@@ -1,0 +1,104 @@
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  background: #def;
+}
+
+header {
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
+}
+main {
+  text-align: center;
+}
+
+footer {
+  margin-top: 50px;
+  border-top: 2px solid black;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+input {
+  border-radius: 3px;
+  height: 1.5rem;
+}
+
+button {
+  margin: 0 5px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:active {
+  background: #777;
+}
+
+#searchBar {
+  margin: 0 20px; 
+}
+
+#tagFilters p {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#tagFilters * {
+  display: inline-block;
+}
+
+#contactsContainer {
+  margin-top: 10px;
+}
+
+.contact {
+  display: inline-block;
+  min-width: 300px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  background: #37f;
+}
+
+.contact h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.contact .infoTitle {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+}
+
+.tag {
+  display: inline-block;
+  background: #36f;
+  border: 1px solid silver;
+  padding: 5px;
+  margin: 4px;
+  color: white;
+}
+
+.tagContainer .tag {
+  cursor: pointer;
+}
+
+.tagContainer .tag:active {
+  background: #00a;
+}
+.hidden {
+  display: none;
+}

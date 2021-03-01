@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Manager</title>
+    <link href="stylesheets/contact_manager.css" rel="stylesheet" />
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/handlebars.js"></script>
+    <script src="javascripts/ajax_requests.js"></script>
+    <script src="javascripts/utilities.js"></script>
+    <script src="javascripts/pages.js"></script>
+    <script src="javascripts/events.js"></script>
+    <script src="javascripts/contact.js"></script>
+    <script src="javascripts/app.js"></script>
+
+    <script type="x-handlebars-template-partial" id="contactPartial">
+      <div class="contact" data-id="{{id}}" data-tags="{{tags}}">
+        <h3 class="fullName">{{full_name}}</h3>
+        <p class="infoTitle">Phone Number:</p>
+        <p class="phoneNumber">{{phone_number}}</p>
+        <p class="infoTitle">Email:</p>
+        <p class="email">{{email}}</p>
+        <div class="tagContainer">
+        <span>Tags:</span>
+          {{> tagsPartial tags}}
+        </div>
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    </script>
+
+    <script type="x-handlebars-template" id="contactsTemplate">
+      {{#if contacts}}
+        {{# each contacts}}
+          {{> contactPartial this}}
+        {{/each}}
+      {{else}}
+        <p>You have no contacts...</p>
+      {{/if}}
+    </script>
+
+    <script type="x-handlebars-template" id="contactFormTemplate">
+      <form action="#" id="contactForm" data-contact_id="{{id}}">
+        <label>Full Name:
+          <input type="text" value="{{full_name}}" name="full_name" required />
+        </label>
+        <label>Email Address:
+          <input type="text" value="{{email}}" name="email" pattern=".+@.+\..+" />
+        </label>
+        <label>Telephone Number:
+          <input type="text" value="{{phone_number}}" name="phone_number" pattern="\d?-?(\d{3}-?){2}\d{4}" />
+        </label>
+        <label>Add Tag:
+          <input type="text" name="newTag">
+          <button id="addTag">+</button>
+        </label>
+        <div id="tagContainer">
+          {{> tagsPartial tags}}
+        </div>
+        <button id="submit">Submit</button>
+        <button id="cancel">Cancel</button>
+      </form>
+    </script>
+
+    <script type="x-handlebars-template-partial" id="tagsPartial">
+      {{#each this}}
+        <span class="tag" data-tagName="{{this}}">{{this}}</span>
+      {{/each}}
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+      <h1>Contact Manager</h1>
+    </header>
+
+    <main>
+      <div id="homePage">
+        <button id="addContact">Add Contact</button>
+        <input id="searchBar" placeholder="Search" type="text" />
+        <button id="showAll">Show All</button>
+        <div id="tagFilters">
+          <p>Tag Filters: </p>
+          <div id="selectedTags">
+
+          </div>
+        </div>
+        <div id="contactsContainer">
+
+        </div>
+      </div>
+
+      <div id="addContactPage">
+        
+      </div>
+
+      <div id="editContactPage">
+        
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; Obese Giraffe Productions</p>
+    </footer>
+  </body>
+</html>
