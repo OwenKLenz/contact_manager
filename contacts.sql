@@ -11,3 +11,8 @@ INSERT INTO contacts
   (full_name, phone_number, email, tags)
   VALUES
   ('Owen Lenz', '1234567890', 'owen@kevra.lenz', 'one, two, three');
+
+INSERT INTO contacts
+  (full_name, phone_number, email, tags)
+  VALUES
+  ('Some Guy', '1212121212', 'some@guy.com', 'cheese, crackers, three');

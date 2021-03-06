@@ -50,6 +50,10 @@ class HomePage {
 
   assembleContactsList() {
     return [...this.contactsContainer.children].map(contact => {
+      if (contact.tagName === "P") {
+        return
+      }
+
       return new Contact(contact);
     });
   }
